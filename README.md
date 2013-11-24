@@ -3,6 +3,7 @@ coto_rss
 
 Correcteur externe pour RSS de sites web en carton
 
+démo: http://albirew.fr/bordel/coto_rss.php
  ----------------------------------------------------------------------------
  « LICENCE BEERWARE » (Révision 42):
  <romain@albirew.fr> a créé ce fichier. Tant que vous conservez cet avertissement,
