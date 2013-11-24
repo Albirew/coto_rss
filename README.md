@@ -16,15 +16,15 @@ ToDo:
 
 Historique des révisions:
 
-rev.12 commenté la rev.10 en attendant de mieux (même les caractères déjà encodés étaient réencodés)
-rev.11 ajout effacement de plusieures lignes avant <?xml
-rev.10 changement & grace a preg_replace
-rev.09 ajout caractère &
-rev.08 ajout style et tracker piwik
-rev.07 nettoyage du code, html5 valide
-rev.06 mise en forme page + ajout exemple dans le champ rss du formulaire
-rev.05 ajout formulaire
-rev.04 ajout page si pas de RSS en entrée
-rev.03 ajout caractère SUB
-rev.02 ajout caractères BS et SI
-rev.01 fichier initial
+- rev.12 commenté la rev.10 en attendant de mieux (même les caractères déjà encodés étaient réencodés)
+- rev.11 ajout effacement de plusieures lignes avant <?xml
+- rev.10 changement & grace a preg_replace
+- rev.09 ajout caractère &
+- rev.08 ajout style et tracker piwik
+- rev.07 nettoyage du code, html5 valide
+- rev.06 mise en forme page + ajout exemple dans le champ rss du formulaire
+- rev.05 ajout formulaire
+- rev.04 ajout page si pas de RSS en entrée
+- rev.03 ajout caractère SUB
+- rev.02 ajout caractères BS et SI
+- rev.01 fichier initial
