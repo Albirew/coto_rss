@@ -13,6 +13,7 @@ ToDo:
 
 Liste des révisions:
 
+rev.13 viré un OK avant certains flux o_O
 rev.12 commenté la rev.10 en attendant de mieux (même les caractères déjà encodés étaient réencodés)
 rev.11 ajout effacement de plusieures lignes avant <?xml
 rev.10 changement & grace a preg_replace
@@ -33,12 +34,13 @@ if(isset($_GET['rss']))
     $boulets = file_get_contents($url);
     header("Pragma: no-cache");
     header("Content-type: application/rss+xml");
-    $corrige = str_replace("\n <?xml" , "<?xml", $boulets);
+    $corrige = str_replace(" <?xml" , "<?xml", $boulets);
     $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
     $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
     $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
     $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
     $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
+    $corrige = str_replace("OK<?xml" , "<?xml", $corrige);
 #    $corrige = preg_replace('/&(?!amp;|quot;|nbsp;|gt;|lt;|laquo;|raquo;|copy;|reg;|bul;|rsquo;)/', '&amp;', $corrige);  
     $corrige = str_replace("" , "", $corrige);
     $corrige = str_replace("" , "", $corrige);
@@ -60,7 +62,7 @@ else
   <div style="margin:0 0 1px 0; background-image: url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAPCAYAAAAlH6X5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEBJREFUeNpieJdb9J+JAQggxO///xmYvv//x8D08d8/BoY/f/58YfgPBGBZ5hs3bmwGsZ6DiPcg4gdIFqIXIMAAfOwcqLCrkOQAAAAASUVORK5CYII=\'); height: 15px;"></div>
     <div style="width: 910px; margin: 0 auto;">
       <h1 style="font-size:220%; letter-spacing: 1px; text-align: center; margin: 0; text-decoration:underline; font-weight:bold;">Correcteur de RSS pour sites web en carton</h1>
-      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.12<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
+      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.13<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
         <div style="text-align: center; margin: 0;"><form method="get" action="coto_rss.php">
           <input type="text" value="ex: blablabla.fr/rss.php?id=news" size="50" name="rss" onFocus="this.value=\'\'" />
           <button type="submit" value="1">GO!</button>
@@ -70,6 +72,7 @@ else
     <div style="position:fixed; bottom:5px; left:5px; font:15px Courier New; font-size:30px;">
       <a href="https://twitter.com/albirew">Vous aimez? Venez me le tweeter!</a>
     </div>
+
 <!-- Piwik -->
 <script type="text/javascript">
 var pkBaseURL = (("https:" == document.location.protocol) ? "https://statos.albirew.fr/" : "http://statos.albirew.fr/");
@@ -82,8 +85,8 @@ piwikTracker.enableLinkTracking();
 } catch( err ) {}
 </script><noscript><p><img src="http://statos.albirew.fr/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
+
   </body>
 </html>';
   }
-
 ?>
