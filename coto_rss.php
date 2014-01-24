@@ -72,20 +72,6 @@ else
     <div style="position:fixed; bottom:5px; left:5px; font:15px Courier New; font-size:30px;">
       <a href="https://twitter.com/albirew">Vous aimez? Venez me le tweeter!</a>
     </div>
-
-<!-- Piwik -->
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://statos.albirew.fr/" : "http://statos.albirew.fr/");
-document.write(unescape("%3Cscript src=\'" + pkBaseURL + "piwik.js\' type=\'text/javascript\'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://statos.albirew.fr/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
-
   </body>
 </html>';
   }
