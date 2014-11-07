@@ -1,7 +1,8 @@
 coto_rss
 ========
 
-Correcteur externe pour RSS de sites web en carton
+RSS corrector (can also be used as an RSS proxy)
+Correcteur externe pour RSS de sites web en carton (sert aussi de proxy RSS)
 
 démo: http://albirew.fr/bordel/coto_rss.php
  ----------------------------------------------------------------------------
@@ -13,7 +14,7 @@ démo: http://albirew.fr/bordel/coto_rss.php
  ----------------------------------------------------------------------------
  
 ToDo:
-- pouvoir encoder les caractères spéciaux non encodés sans double-coder ceux déjà encodés (certains RSS mélangent les deux du genre titre avec & seul et contenu avec &amp;)
+- pouvoir encoder les caractères spéciaux non encodés sans double-coder ceux déjà encodés (certains RSS mélangent les deux, par exemple titre avec "&" seul et contenu avec "&amp")
 
 Historique des révisions:
 
