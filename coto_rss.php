@@ -13,44 +13,73 @@ ToDo:
 
 Liste des révisions:
 
+rev.15 remplacement de file_get_contents par cURL
+rev.14 remplacement des commandes pour virer tout ce qui avait avant <?xml par stristr
 rev.13 viré un OK avant certains flux o_O
 rev.12 commenté la rev.10 en attendant de mieux (même les caractères déjà encodés étaient réencodés)
 rev.11 ajout effacement de plusieures lignes avant <?xml
 rev.10 changement & grace a preg_replace
 rev.09 ajout caractère &
-rev.08 ajout style et tracker piwik
+rev.08 ajout style
 rev.07 nettoyage du code, html5 valide
 rev.06 mise en forme page + ajout exemple dans le champ rss du formulaire
 rev.05 ajout formulaire
 rev.04 ajout page si pas de RSS en entrée
-rev.03 ajout caractère SUB
-rev.02 ajout caractères BS et SI
-rev.01 fichier initial
+rev.03 ajout suppression du caractère SUB
+rev.02 ajout suppression des caractères BS et SI
+rev.01 fichier initial (supprime les caractères ETX)
  */
+function better_file_get_content($url)
+{
+  $user_agent='Mozilla/5.0 (Windows NT 6.1; rv:8.0) Gecko/20100101 Firefox/8.0';
+  $options = array(
+    CURLOPT_CUSTOMREQUEST =>"GET",
+    CURLOPT_POST =>false,
+    	CURLOPT_USERAGENT => $user_agent,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_HEADER => false,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_AUTOREFERER => true,
+    CURLOPT_CONNECTTIMEOUT => 120,
+    CURLOPT_TIMEOUT => 120,
+    CURLOPT_MAXREDIRS => 10,
+  );
+  $ch = curl_init( $url );
+  curl_setopt_array( $ch, $options );
+  $content = curl_exec( $ch );
+  $err = curl_errno( $ch );
+  $errmsg = curl_error( $ch );
+  $header = curl_getinfo( $ch );
+  curl_close( $ch );
+  $header['errno'] = $err;
+  $header['errmsg'] = $errmsg;
+  $header['content'] = $content;
+  return $header;
+}
+
+function clean_rss($url)
+{
+  $source = better_file_get_content($url)[content];
+  $corrige = stristr($source, '<?xml');
+  $corrige = str_replace("" , "", $corrige);
+  $corrige = str_replace("" , "", $corrige);
+  $corrige = str_replace("" , "", $corrige);
+  $corrige = str_replace("" , "", $corrige);
+  return $corrige;
+}
+
 if(isset($_GET['rss']))
-  {
-    $url = $_GET['rss'];
-    if(!preg_match('/http[s]?:\/\//', $url, $matches)) $url = 'http://'.$url;
-    $boulets = file_get_contents($url);
-    header("Pragma: no-cache");
-    header("Content-type: application/rss+xml");
-    $corrige = str_replace(" <?xml" , "<?xml", $boulets);
-    $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
-    $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
-    $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
-    $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
-    $corrige = str_replace("\n<?xml" , "<?xml", $corrige);
-    $corrige = str_replace("OK<?xml" , "<?xml", $corrige);
-#    $corrige = preg_replace('/&(?!amp;|quot;|nbsp;|gt;|lt;|laquo;|raquo;|copy;|reg;|bul;|rsquo;)/', '&amp;', $corrige);  
-    $corrige = str_replace("" , "", $corrige);
-    $corrige = str_replace("" , "", $corrige);
-    $corrige = str_replace("" , "", $corrige);
-    $correction = str_replace("" , "", $corrige);
-    echo $correction;
-  } 
+{
+  $rss = $_GET['rss'];
+  if(!preg_match('/http[s]?:\/\//', $rss, $matches)) $rss = 'http://'.$rss;
+  header("Pragma: no-cache");
+  header("Content-type: application/rss+xml");
+  echo clean_rss($rss);
+} 
 else 
-  {
-    echo '<!doctype html>
+{
+  echo '<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -62,7 +91,7 @@ else
   <div style="margin:0 0 1px 0; background-image: url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAPCAYAAAAlH6X5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEBJREFUeNpieJdb9J+JAQggxO///xmYvv//x8D08d8/BoY/f/58YfgPBGBZ5hs3bmwGsZ6DiPcg4gdIFqIXIMAAfOwcqLCrkOQAAAAASUVORK5CYII=\'); height: 15px;"></div>
     <div style="width: 910px; margin: 0 auto;">
       <h1 style="font-size:220%; letter-spacing: 1px; text-align: center; margin: 0; text-decoration:underline; font-weight:bold;">Correcteur de RSS pour sites web en carton</h1>
-      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.13<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
+      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.15<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
         <div style="text-align: center; margin: 0;"><form method="get" action="coto_rss.php">
           <input type="text" value="ex: blablabla.fr/rss.php?id=news" size="50" name="rss" onFocus="this.value=\'\'" />
           <button type="submit" value="1">GO!</button>
@@ -74,5 +103,5 @@ else
     </div>
   </body>
 </html>';
-  }
+}
 ?>
