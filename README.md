@@ -1,16 +1,18 @@
 coto_rss
-========
+===
+![LICENSE](https://img.shields.io/badge/license-beerware-blue.svg)
 
-RSS corrector (can also be used as an RSS proxy)
-Correcteur externe pour RSS de sites web en carton (sert aussi de proxy RSS)
+coto_rss is a PHP project capable of correcting faulty RSS feeds rampaging around the internet (can also be used as an RSS feeds proxy)
 
-démo: http://albirew.fr/bordel/coto_rss.php
- ----------------------------------------------------------------------------
- « LICENCE BEERWARE » (Révision 42):
- <romain@albirew.fr> a créé ce fichier. Tant que vous conservez cet avertissement,
- vous pouvez faire ce que vous voulez de ce truc. Si on se rencontre un jour et
- que vous pensez que ce truc vaut le coup, vous pouvez me payer une bière en
- retour.
- ----------------------------------------------------------------------------
+Requirements
+===
 
+* PHP 5
+* `openssl` extension enabled in PHP config (`php.ini`)
+* `allow_url_fopen=1` in `php.ini`
 
+Licenses
+===
+Code is Beerware
+
+[demo website](http://albirew.fr/bordel/coto_rss.php)
