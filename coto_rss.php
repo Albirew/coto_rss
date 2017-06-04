@@ -14,7 +14,7 @@ function better_file_get_content($url)
   $options = array(
     CURLOPT_CUSTOMREQUEST =>"GET",
     CURLOPT_POST =>false,
-    	CURLOPT_USERAGENT => $user_agent,
+    CURLOPT_USERAGENT => $user_agent,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_HEADER => false,
     CURLOPT_FOLLOWLOCATION => true,
@@ -78,7 +78,7 @@ else
         <div style="background-image: url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABVJREFUeNpiuH79+jWG////nwEIMAAi+QclPGli9AAAAABJRU5ErkJggg==\'); width: 780px; height:2px; margin: 0 auto;"></div>
       </div>
     <div style="position:fixed; bottom:5px; left:5px; font:15px Courier New; font-size:30px;">
-      <a href="https://twitter.com/albirew">Vous aimez? Venez me le tweeter!</a>
+      <a href="https://twitter.com/albirew">Albirew</a> - <a href="https://github.com/Albirew/coto_rss">code source</a>
     </div>
   </body>
 </html>';
