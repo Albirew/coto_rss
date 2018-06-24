@@ -7,6 +7,7 @@ coto_rss
 
 ## Historique des révisions
 
+* rev.16 ajout de mb_convert_encoding pour dégager les caractères codés sur plusieurs bits tronqués en plein milieu.
 * rev.15 remplacement de file_get_contents par cURL
 * rev.14 remplacement des commandes pour virer tout ce qui avait avant <?xml par stristr
 * rev.13 viré un OK avant certains flux o_O
