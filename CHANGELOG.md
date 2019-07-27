@@ -7,6 +7,7 @@ coto_rss
 
 ## Historique des révisions
 
+* rev.17 remplacement du JS par un placeholder dans le formulaire
 * rev.16 ajout de mb_convert_encoding pour dégager les caractères codés sur plusieurs bits tronqués en plein milieu.
 * rev.15 remplacement de file_get_contents par cURL
 * rev.14 remplacement des commandes pour virer tout ce qui avait avant <?xml par stristr

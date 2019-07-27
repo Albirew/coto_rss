@@ -7,7 +7,7 @@ coto_rss is a PHP project capable of correcting faulty RSS feeds rampaging aroun
 Requirements
 ===
 
-* PHP 5
+* PHP 5+
 * `openssl` extension enabled in PHP config (`php.ini`)
 * `allow_url_fopen=1` in `php.ini`
 
