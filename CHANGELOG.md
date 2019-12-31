@@ -7,6 +7,7 @@ coto_rss
 
 ## Historique des révisions
 
+* rev.19 removed content-type rss (since it makes browsers to download page instead of showing it)
 * rev.18 added option to curl to allow get from websites with bad cert
 * rev.17 remplacement du JS par un placeholder dans le formulaire
 * rev.16 ajout de mb_convert_encoding pour dégager les caractères codés sur plusieurs bits tronqués en plein milieu.

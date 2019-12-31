@@ -56,7 +56,6 @@ if(isset($_GET['rss']))
   $rss = $_GET['rss'];
   if(!preg_match('/http[s]?:\/\//', $rss, $matches)) $rss = 'http://'.$rss;
   header("Pragma: no-cache");
-  header("Content-type: application/rss+xml");
   echo clean_rss($rss);
 } 
 else 
@@ -73,7 +72,7 @@ else
   <div style="margin:0 0 1px 0; background-image: url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAPCAYAAAAlH6X5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEBJREFUeNpieJdb9J+JAQggxO///xmYvv//x8D08d8/BoY/f/58YfgPBGBZ5hs3bmwGsZ6DiPcg4gdIFqIXIMAAfOwcqLCrkOQAAAAASUVORK5CYII=\'); height: 15px;"></div>
     <div style="width: 910px; margin: 0 auto;">
       <h1 style="font-size:220%; letter-spacing: 1px; text-align: center; margin: 0; text-decoration:underline; font-weight:bold;">Correcteur de RSS pour sites web en carton</h1>
-      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.18<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
+      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.19<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
         <div style="text-align: center; margin: 0;"><form method="get" action="coto_rss.php">
           <input type="text" placeholder="website.com/rss.php?id=news" size="50" name="rss"/>
           <button type="submit" value="1">GO!</button>
