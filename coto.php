@@ -52,7 +52,7 @@ else
   <head>
     <meta charset="utf-8">
     <title>proxy RSS</title>
-    <meta name="description" content=Proxy RSSn">
+    <meta name="description" content=Proxy RSS">
     <style type="text/css">body,a:link,a:visited {color:#fff; text-shadow: 1px 1px 1px black;}</style>
   </head>
   <body style="margin: 0; background: linear-gradient(to bottom,#3a8dc8 0,#183a62 100%); line-height: 1.231;">
@@ -63,7 +63,7 @@ else
           <input type="text" placeholder="website.com/page.html" size="50" name="rss"/>
           <button type="submit" value="1">GO!</button>
         </form></div>
-        <div style="margin-top: 2em; background-image: url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABVJREFUeNpiuH79+jWG////nwEIMAAi+QclPGli9AAAAABJRU5ErkJggg==\'); width: 780px; height:2px; margin: 0 auto;"></div>
+        <div style="background-color: #fff; width: 780px; height:2px; margin: 2em auto;"></div>
       </div>
     <div style="background:black; position:absolute; bottom:0; width:100%; padding-bottom:5px; padding-left:5px; font:15px Courier New; font-size:30px;">
      <a href="https://twitter.com/albirew">Albirew</a> - <a href="https://github.com/Albirew/coto_rss">code source</a>
