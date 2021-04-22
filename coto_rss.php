@@ -8,6 +8,7 @@
  * retour.
  * ----------------------------------------------------------------------------
  */
+$revision='21';
 function better_file_get_content($url)
 {
   $user_agent='Mozilla/5.0 (Windows NT 6.1; rv:8.0) Gecko/20100101 Firefox/8.0';
@@ -40,8 +41,8 @@ function better_file_get_content($url)
 
 function clean_rss($url)
 {
-  $source = better_file_get_content($url)[content];
-  $corrige = stristr($source, '<?xml');
+  $source = better_file_get_content($url);
+  $corrige = stristr($source['content'], '<?xml');
   $corrige = str_replace("" , "", $corrige);
   $corrige = str_replace("" , "", $corrige);
   $corrige = str_replace("" , "", $corrige);
@@ -68,10 +69,10 @@ else
     <meta name="description" content="Correcteur de RSS pour sites web en carton">
     <style type="text/css">body,a:link,a:visited {color:#fff; text-shadow: 1px 1px 1px black;}</style>
   </head>
-  <body style="margin: 0; background: linear-gradient(to bottom,#3a8dc8 0,#183a62 100%); line-height: 1.231;">
+  <body style="margin: 0; background: linear-gradient(to bottom,#3a8dc8 0,#183a62 100%); line-height: 1.337;">
     <div style="width: 910px; margin: 0 auto;">
       <h1 style="font-size:220%; letter-spacing: 1px; text-align: center; margin: 0; text-decoration:underline; font-weight:bold;">Correcteur de RSS pour sites web en carton</h1>
-      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.20<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
+      <h2 style="font-size:20px; text-align: right; margin: 0 0 10px 0;">rev.'.$revision.'<br>Enlève certains caractères invisibles qui malforment les flux RSS (peux servir aussi de proxy RSS)<br><br>Mode d`emploi: Mettez l`URL complète du flux RSS que vous voulez, puis cliquez sur GO!.<br></h2>
         <div style="text-align: center; margin: 0;"><form method="get" action="coto_rss.php">
           <input type="text" placeholder="website.com/rss.php?id=news" size="50" name="rss"/>
           <button type="submit" value="1">GO!</button>
