@@ -43,5 +43,4 @@ Twitter: https://twitter.com/Albirew
 http://albirew.fr/bordel/coto_rss.php
 
 # Licence
-DON'T BE A DICK PUBLIC LICENSE (https://dbad-license.org/)
-
+See [LICENSE.md](LICENCE.md)
