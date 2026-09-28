@@ -36,8 +36,8 @@ coto_rss is a PHP project capable of correcting faulty RSS feeds rampaging aroun
 * rev.01 initial release (remove "ETX" invisible characters)
 
 # Contact
-Mastodon: https://soshar.dess.ga/@Albirew
-Twitter: https://twitter.com/Albirew
+- Mastodon: [@Albirew@mamot.fr](https://mamot.fr/@Albirew)
+- BlueSky: [@soshar.albirew.fr](https://bsky.app/profile/did:plc:6qjy6epkiicf2qeftbdwkqtb)
 
 # Demolink
 http://albirew.fr/bordel/coto_rss.php
